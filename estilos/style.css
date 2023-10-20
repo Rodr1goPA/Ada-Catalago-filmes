@@ -1,0 +1,243 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container-cabecalho{
+    background-image:url('../imagens/fala-universidades-netflix-3-1.webp');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    color: #fff;
+}
+#background-cabecalho{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.734);
+    height: 100vh;
+}
+#container-menu{
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(193, 8, 8, 0.846);
+}
+#container-menu > a{
+    padding: 0px 60px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#container-titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+#container-titulo > div{
+    display: flex;
+    flex-direction: column;
+    
+    width: 60%;
+}
+#container-titulo > div >h1{
+    font-size: 4em;
+    color: rgb(209, 8, 8);
+}
+#container-titulo > div > p{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Merriweather', serif;
+}
+
+#movies-section{
+    text-align: center;
+    background-color: rgb(33, 31, 31);
+}
+
+#movies-section > h1{
+    font-size: 3.5em;
+    padding: 50px;
+    font-weight: bold;
+    color: white;
+}
+#movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#movies > div{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 520px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+}
+#movies > div > h2{
+    height: 70px;
+}
+#movies > div > img{
+    width: 250px;
+    margin:auto;
+}
+#movies > div > button{
+    margin: 20px auto;
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    border: none;
+    color: white;
+}
+
+/*series*/
+#tv-shows-section{
+    text-align: center;
+    background-color: rgb(33, 31, 31);
+}
+#tv-shows-section > h1{
+    font-size: 3.5em;
+    padding: 50px;
+    font-weight: bold;
+    color: white;
+}
+#tv-shows{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#tv-shows > div{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 520px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+}
+#tv-shows > div > h2{
+    height: 70px;
+}
+#tv-shows > div > img{
+    width: 250px;
+    margin:auto;
+}
+#form-btn,
+#tv-shows > div > button{
+    margin: 20px auto;
+    height: 50px;
+    width: 150px;
+    background-color: red;
+    border: none;
+    color: white;
+}
+
+/*Form*/
+.container-form{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 600px;
+    background-color: rgba(61, 57, 57, 0.754);
+}
+.container-form > h3{
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.container-form > p{
+    margin: 20px auto;
+    width: 80%;
+}
+.container-input{
+    margin: 20px auto;
+    height: 70px;
+}
+.container-input > input{
+    width: 99%;
+    height:40px;
+}
+label{
+    color: white;
+    font-size: 1.2em;
+}
+textarea{
+    width: 99%;
+    height: 100px;
+}
+.section-form{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../imagens/685983d002c54c0.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.background-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(121, 114, 114, 0.882);
+}
+.background-form > div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.background-form > div > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    height: 600px;
+}
+.background-form > div > div > p{
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+/*roda pé*/
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44, 42, 42);
+}
+footer > div{
+    text-align: center;
+    margin: 20px;
+    color: gray;
+}
+footer > div > h4{
+    margin-bottom: 20px;
+}
+
+footer > div > a{
+    padding: 20px;
+}
+img{
+    width: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(211, 194, 194); 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #070707; /* Cor de fundo da área da barra de rolagem */
+  }
+

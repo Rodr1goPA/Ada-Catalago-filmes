@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes e Séries</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="scripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Raleway:wght@200&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="container-cabecalho">
+        <div id="background-cabecalho">
+            <nav>
+                <div id="container-menu">
+                    <a href="#">Home</a>
+                    <a href="#">Filmes</a>
+                    <a href="#">Séries</a>
+                    <a href="#">Contate-nos</a>
+                </div>
+            </nav>
+            <div id="container-titulo">
+                <div>
+                    <h1>CineFlix</h1>
+                    <p>"Bem-vindo ao CineFlix, sua fonte central de informações de filmes. Explore sinopses, elencos e fatos fascinantes sobre uma variedade de filmes, de clássicos a lançamentos recentes. Encontre inspiração para sua próxima sessão de cinema, tudo em um só lugar."</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="movies-section">
+                <h1>Filmes populares</h1>
+                <div id="movies"></div>
+            </div>
+            <div id="movie-details-section" style="display: none;">
+                <h1>Detalhes do Filme</h1>
+                <div id="movie-details-content"></div>
+                <button id="back-to-movies">Voltar</button>
+            </div> 
+        </section>
+        <section>
+            <div id="tv-shows-section">
+                <h1>Séries de TV populares</h1>
+                <div id="tv-shows">
+                </div>
+            </div>
+                <div id="tv-show-details-section" style="display: none;">
+                    <h1>Detalhes da Série de TV</h1>
+                    <div id="tv-show-details-content"></div>
+                    <button id="back-to-tv-shows">Voltar</button>
+                </div>
+        </section>
+        <section  class="section-form">
+            <div class="background-form">
+                <div>
+                    <div>
+                        <p>Qual quer duvida use nossa caixa de dialago, sua opinião é de grande valor!!!</p>
+                    </div>
+                    <form class="container-form">
+                            <h3>Deixe sua sugestão</h3>
+                            <p class="container-input">
+                                <label for="nome">Nome:</label>
+                                <br>
+                                <input type="text" id="nome" name="nome">
+                            </p>
+                            <p class="container-input">
+                                <label for="email">Email:</label>
+                                <br>
+                                <input type="text" id="email" name="email">
+                            </p>
+                            <p >
+                                <label for="opiniao">Caixa de mensagens:</label>
+                                <br>
+                                <textarea name="opiniao" id="opiniao"></textarea>
+                            </p>
+                            <button type="submit" id="form-btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+            <div>
+                <h4>Links sociais</h4>
+                <a href=""><img src="imagens/github.png" alt="icone-github"></a>
+                <a href=""><img src="imagens/linkedin.png" alt="icone-linkedin"></a>
+                <a href=""><img src="imagens/instagram.png" alt="icone-instagram"></a>
+            </div>
+            <div>
+                <p>&copy; 2023 Website developed by Rodrigo Pereira</p>
+            </div>
+    </footer>
+</body>
+</html>
