@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiKey = 'b046cd3b7c462dff10c810f0a49e4168';
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
-    const tvApiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`;
+    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`;
+    const tvApiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=pt-BR`;
+    let scrollPosition = 0;
     
     fetch(apiUrl)
         .then(response => {
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
                 const detailButton = movieDiv.querySelector('.detail-button');
                 detailButton.addEventListener('click', () => {
+                    scrollPosition = window.scrollY;
                     showMovieDetails(movie);
                 });
             });            
@@ -36,22 +38,48 @@ document.addEventListener("DOMContentLoaded", function () {
             const moviesSection = document.getElementById('movies-section');
             const movieDetailsSection = document.getElementById('movie-details-section');
             const movieDetailsContent = document.getElementById('movie-details-content');
+            const containerCabecalho = document.querySelector('.container-cabecalho');
+            const tvShowSection = document.getElementById('tv-shows-section');
+            const sectionForm = document.querySelector('.section-form');
+            const footerSection = document.querySelector('.section-footer')
+
+            const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
+            const imageSrc = `${imageBaseUrl}${movie.poster_path}`;
 
             moviesSection.style.display = 'none';
+            containerCabecalho.style.display = 'none';
+            tvShowSection.style.display = 'none';
+            sectionForm.style.display = 'none';
+            footerSection.style.display = 'none';
+
             movieDetailsSection.style.display = 'block';
+            
         
             movieDetailsContent.innerHTML = `
-                <h2>${movie.title}</h2>
-                <p><strong>Sinopse:</strong> ${movie.overview}</p>
-                <p><strong>Data de Lançamento:</strong> ${movie.release_date}</p>
-                <p><strong>Classificação:</strong> ${movie.vote_average}</p>
+            <div>
+            <img src="${imageSrc}" alt="${movie.title}"></img>
+            <div>
+            <h2>${movie.title}</h2>
+            <p><strong>Sinopse:</strong> ${movie.overview}</p>
+            <p><strong>Data de Lançamento:</strong> ${movie.release_date}</p>
+            <p><strong>Classificação:</strong> ${movie.vote_average}</p>
+            <button id="back-to-movies">Voltar</button>
+            </div>
+            </div>
             `;
             const backToMoviesButton = document.getElementById('back-to-movies');
-        backToMoviesButton.addEventListener('click', () => {
-
+            backToMoviesButton.addEventListener('click', () => {
+            window.scrollTo(0, scrollPosition);
             movieDetailsSection.style.display = 'none';
+
+
     
             moviesSection.style.display = 'block';
+            containerCabecalho.style.display = 'block';
+            tvShowSection.style.display = 'block';
+            sectionForm.style.display = 'flex';
+            footerSection.style.display = 'flex';
+            window.scrollTo(0, scrollPosition);
         });            
         }
 
@@ -78,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const tvdetailButton = tvShowDiv.querySelector('.detail-button')
                 tvdetailButton.addEventListener('click' , () => {
+                    scrollPosition = window.scrollY;
+                    console.log(scrollPosition)
                     showTvDetails(movie)
                 })
             })
@@ -90,50 +120,49 @@ document.addEventListener("DOMContentLoaded", function () {
             const tvShowSection = document.getElementById('tv-shows-section')
             const tvShowDetailsSection = document.getElementById('tv-show-details-section')
             const tvShowDetailsContent = document.getElementById('tv-show-details-content')
+            const containerCabecalho = document.querySelector('.container-cabecalho');
+            const moviesSection = document.getElementById('movies-section');
+            const sectionForm = document.querySelector('.section-form');
+            const footerSection = document.querySelector('.section-footer')
 
-            tvShowSection.style.display = 'none'
+                const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
+            const imageSrc = `${imageBaseUrl}${movie.poster_path}`;
+
+            tvShowSection.style.display = 'none';
+            containerCabecalho.style.display = 'none';
+            moviesSection.style.display = 'none';
+            sectionForm.style.display ='none';
+            footerSection.style.display = 'none';
+            
             tvShowDetailsSection.style.display = 'block'
 
             tvShowDetailsContent.innerHTML = `
+            <div>
+            <img src="${imageSrc}" alt="${movie.title}"></img>
+            <div>
             <h2>${movie.name}</h2>
             <p><strong>Sinopse:</strong> ${movie.overview}</p>
             <p><strong>Data de Lançamento:</strong> ${movie.first_air_date}</p>
             <p><strong>Classificação:</strong> ${movie.vote_average}</p>
+            <button id="back-to-tv-shows">Voltar</button>
+            </div>
+            </div>
             `;
 
             const backToTvButton = document.getElementById('back-to-tv-shows')
             backToTvButton.addEventListener('click' , () => {
+                
                 tvShowDetailsSection.style.display = 'none'
-                tvShowSection.style.display = 'block'
+
+                
+                moviesSection.style.display = 'block';
+                containerCabecalho.style.display = 'block';
+                tvShowSection.style.display = 'block';
+                sectionForm.style.display = 'flex';
+                footerSection.style.display = 'flex';
+                window.scrollTo(0, scrollPosition)
             })
         }
+
+        /*Efeito no menu*/
 });
-
-
-let currentIndex = 0;
-const numCards = document.querySelectorAll('.movie-card').length;
-const carousel = document.querySelector('.carousel');
-
-function showNextCard() {
-  if (currentIndex < numCards - 1) {
-    currentIndex++;
-    updateCarousel();
-  }
-}
-
-function showPreviousCard() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateCarousel();
-  }
-}
-
-function updateCarousel() {
-  const cardWidth = document.querySelector('.movie-card').offsetWidth;
-  const translateValue = -currentIndex * cardWidth;
-  carousel.style.transform = `translateX(${translateValue}px)`;
-}
-
-// Adicione event listeners aos botões "Próximo" e "Anterior" (ou qualquer mecanismo que você queira usar para navegar)
-document.getElementById('next-button').addEventListener('click', showNextCard);
-document.getElementById('previous-button').addEventListener('click', showPreviousCard);

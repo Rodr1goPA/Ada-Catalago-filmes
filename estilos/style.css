@@ -13,29 +13,53 @@
 #background-cabecalho{
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.734);
+    background-color: rgba(23, 23, 23, 0.719);
     height: 100vh;
 }
+#background-cabecalho > nav{
+    background-color: rgba(227, 43, 43, 0.995);
+}
+#menu{
+    display: flex;
+    align-items: center;
+}
+#menu > div > p{
+    margin-left: 10px;
+    font-size: 3.5em;
+    color: rgb(61, 56, 56);
+}
+#container-login{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 3px;
+    border-radius: 5px;
+}
+#container-login > a{
+    display: flex;
+    margin-right: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
 #container-menu{
+    width: 50%;
     display: flex;
     margin: 0px auto;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 20px;
-    background-color: rgba(193, 8, 8, 0.846);
 }
 #container-menu > a{
-    padding: 0px 60px;
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 #container-titulo{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
     height: 100vh;
 }
 #container-titulo > div{
@@ -53,10 +77,12 @@
     font-size: 1.5em;
     font-family: 'Merriweather', serif;
 }
+/*Form de pesquisa de filmes*/
 
 #movies-section{
     text-align: center;
-    background-color: rgb(33, 31, 31);
+    padding-top: 60px;
+    background-color: rgb(16, 15, 15);
 }
 
 #movies-section > h1{
@@ -98,7 +124,8 @@
 /*series*/
 #tv-shows-section{
     text-align: center;
-    background-color: rgb(33, 31, 31);
+    background-color: rgb(16, 15, 15);
+    border-top: 5px solid rgb(77, 74, 74);
 }
 #tv-shows-section > h1{
     font-size: 3.5em;
@@ -127,6 +154,8 @@
     width: 250px;
     margin:auto;
 }
+#back-to-tv-shows,
+#back-to-movies,
 #form-btn,
 #tv-shows > div > button{
     margin: 20px auto;
@@ -135,6 +164,48 @@
     background-color: red;
     border: none;
     color: white;
+}
+/*Detalhes*/
+#tv-show-details-section,
+#movie-details-section{
+    display: flex;
+    height: 100vh;
+    background-image: url('../imagens/fala-universidades-netflix-3-1.webp');
+}
+.detalhes-conteudo{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.885);
+}
+
+.detalhes-conteudo > div{
+    display: flex;
+    width: 80%;
+    background-color: rgba(25, 24, 24, 0.832);
+}
+.detalhes-conteudo > div >img{
+    display: flex;
+    width: 30%; 
+}
+.detalhes-conteudo > div > div{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.detalhes-conteudo > div > div > h2{
+    font-size: 2.5em;
+    padding: 10px;
+}
+.detalhes-conteudo > div > div > p > strong{
+    color: white;
+}
+.detalhes-conteudo > div > div > p{
+    color: gray;
+    font-size: 1.3em;
+    padding: 10px;
 }
 
 /*Form*/
@@ -184,7 +255,7 @@ textarea{
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(121, 114, 114, 0.882);
+    background-color: rgba(121, 113, 113, 0.674);
 }
 .background-form > div{
     display: flex;
@@ -229,15 +300,36 @@ img{
     width: 30px;
 }
 
+/*Estilo da barra de rolagem*/
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 3px;
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: rgb(211, 194, 194); 
+    background-color: rgb(229, 42, 42);
+    border-radius: 20px;
   }
   
   ::-webkit-scrollbar-track {
-    background-color: #070707; /* Cor de fundo da área da barra de rolagem */
+    background-color: #070707;
   }
+
+  /*Midia query (Resposividade para Mobile)*/
+@media (max-width:600px){
+    .background-form > div > div{
+        display: none;
+    }
+
+    .detalhes-conteudo > div >img{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
 

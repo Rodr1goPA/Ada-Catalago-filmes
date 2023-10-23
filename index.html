@@ -12,14 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="container-cabecalho">
+    <header class="container-cabecalho" id="cabecalho">
         <div id="background-cabecalho">
-            <nav>
+            <nav id="menu" class="hidden">
+                <div>
+                    <p>CineFlix</p>
+                </div>
                 <div id="container-menu">
-                    <a href="#">Home</a>
-                    <a href="#">Filmes</a>
-                    <a href="#">Séries</a>
-                    <a href="#">Contate-nos</a>
+                    <a href="#cabecalho">Home</a>
+                    <a href="#movies-section">Filmes</a>
+                    <a href="#tv-shows-section">Séries</a>
+                    <a href="#secao-form">Contate-nos</a>
+                </div>
+                <div id="container-login">
+                    <a href="#">Login</a>
+                    <img src="imagens/user_399052.png" alt="">
                 </div>
             </nav>
             <div id="container-titulo">
@@ -27,21 +34,24 @@
                     <h1>CineFlix</h1>
                     <p>"Bem-vindo ao CineFlix, sua fonte central de informações de filmes. Explore sinopses, elencos e fatos fascinantes sobre uma variedade de filmes, de clássicos a lançamentos recentes. Encontre inspiração para sua próxima sessão de cinema, tudo em um só lugar."</p>
                 </div>
+                <form action="pesquisa.html" method="get" class="form-pesquisa">
+                        <input type="text" id="searchInput" name="query" placeholder="Pesquisar titulo">
+                        <button type="submit">Enviar</button>
+                </form>
             </div>
         </div>
     </header>
     <main>
-        <section>
-            <div id="movies-section">
-                <h1>Filmes populares</h1>
-                <div id="movies"></div>
-            </div>
-            <div id="movie-details-section" style="display: none;">
-                <h1>Detalhes do Filme</h1>
-                <div id="movie-details-content"></div>
-                <button id="back-to-movies">Voltar</button>
-            </div> 
-        </section>
+            <section>
+                <div id="movies-section">
+                    <h1>Filmes populares</h1>
+                    <div id="movies"></div>
+                </div>
+                <div id="movie-details-section"style="display: none;">
+                    <div id="movie-details-content" class="detalhes-conteudo"></div>
+                </div> 
+            </section>
+        </a>
         <section>
             <div id="tv-shows-section">
                 <h1>Séries de TV populares</h1>
@@ -49,12 +59,10 @@
                 </div>
             </div>
                 <div id="tv-show-details-section" style="display: none;">
-                    <h1>Detalhes da Série de TV</h1>
-                    <div id="tv-show-details-content"></div>
-                    <button id="back-to-tv-shows">Voltar</button>
+                    <div id="tv-show-details-content" class="detalhes-conteudo"></div>
                 </div>
         </section>
-        <section  class="section-form">
+        <section  class="section-form" id="secao-form">
             <div class="background-form">
                 <div>
                     <div>
@@ -83,8 +91,8 @@
             </div>
         </section>
     </main>
-    <footer>
-            <div>
+    <footer class="section-footer">
+            <div id="section-footer">
                 <h4>Links sociais</h4>
                 <a href=""><img src="imagens/github.png" alt="icone-github"></a>
                 <a href=""><img src="imagens/linkedin.png" alt="icone-linkedin"></a>
