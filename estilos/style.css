@@ -16,12 +16,11 @@
     background-color: rgba(23, 23, 23, 0.719);
     height: 100vh;
 }
-#background-cabecalho > nav{
-    background-color: rgba(227, 43, 43, 0.995);
-}
+
 #menu{
     display: flex;
     align-items: center;
+    background-color: rgba(227, 43, 43, 0.995);
 }
 #menu > div > p{
     margin-left: 10px;
@@ -124,7 +123,7 @@
 /*series*/
 #tv-shows-section{
     text-align: center;
-    background-color: rgb(16, 15, 15);
+    background-color: rgb(33, 31, 31);
     border-top: 5px solid rgb(77, 74, 74);
 }
 #tv-shows-section > h1{
