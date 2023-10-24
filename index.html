@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="estilos/style.css">
     <script src="scripts/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Raleway:wght@200&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="container-cabecalho">
+    <header class="container-cabecalho" id="cabecalho">
         <div id="background-cabecalho">
             <nav id="menu">
-                <div>
-                    <p>CineFlix</p>
+                <div id="menu-adaflix">
+                    <p>AdaFlix</p>
                 </div>
                 <div id="container-menu">
                     <a href="#cabecalho">Home</a>
@@ -26,19 +34,20 @@
                 </div>
                 <div id="container-login">
                     <a href="#">Login</a>
-                    <img src="imagens/user_399052.png" alt="">
+                    <img src="imagens/user_399052.png" alt="imagem de icone de uma pessoa, que representa um login na págona">
                 </div>
             </nav>
             <div id="container-titulo">
                 <div>
-                    <h1>CineFlix</h1>
-                    <p>"Bem-vindo ao CineFlix, sua fonte central de informações de filmes. Explore sinopses, elencos e fatos fascinantes sobre uma variedade de filmes, de clássicos a lançamentos recentes. Encontre inspiração para sua próxima sessão de cinema, tudo em um só lugar."</p>
+                    <h1>AdaFlix</h1>
+                    <p>"Bem-vindo ao AdaFlix, sua fonte central de informações de filmes. Explore sinopses, elencos e fatos fascinantes sobre uma variedade de filmes, de clássicos a lançamentos recentes. Encontre inspiração para sua próxima sessão de cinema, tudo em um só lugar."</p>
                 </div>
                 <form action="pesquisa.html" method="get" class="form-pesquisa">
-                        <input type="text" id="searchInput" name="query" placeholder="Pesquisar titulo">
-                        <button type="submit">Enviar</button>
+                        <input type="text" id="searchInput" class="input-pesquisa" name="query" placeholder="Pesquisar titulo">
+                        <button type="submit" id="btn-pesquisa">Buscar</button>
                 </form>
             </div>
+            <a href="#cabecalho" id="btn-voltar"><img src="imagens/seta-esquerda.png" alt="Imagem de seta para cima, que indica voltar para o inicio da pagina"></a>
         </div>
     </header>
     <main>
