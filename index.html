@@ -42,7 +42,7 @@
                     <h1>AdaFlix</h1>
                     <p>"Bem-vindo ao AdaFlix, sua fonte central de informações de filmes. Explore sinopses, elencos e fatos fascinantes sobre uma variedade de filmes, de clássicos a lançamentos recentes. Encontre inspiração para sua próxima sessão de cinema, tudo em um só lugar."</p>
                 </div>
-                <form action="pesquisa.html" method="get" class="form-pesquisa">
+                <form action="pesquisa.html" method="get" class="form-pesquisa" target="_blank">
                         <input type="text" id="searchInput" class="input-pesquisa" name="query" placeholder="Pesquisar titulo">
                         <button type="submit" id="btn-pesquisa">Buscar</button>
                 </form>
@@ -60,7 +60,6 @@
                     <div id="movie-details-content" class="detalhes-conteudo"></div>
                 </div> 
             </section>
-        </a>
         <section>
             <div id="tv-shows-section">
                 <h1>Séries de TV populares</h1>
@@ -71,28 +70,85 @@
                     <div id="tv-show-details-content" class="detalhes-conteudo"></div>
                 </div>
         </section>
+        <section class="container-oscar">
+            <div>
+                <h1>Onde assistir os 10 filmes indicados ao oscar 2023</h1>
+                <div class="container-oscar-tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Filme</td>
+                                <td>Onde assistir</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Avatar: O caminho da Água</td>
+                                <td>Cinemas</td>
+                            </tr>
+                            <tr>
+                                <td>Entre Mulheres</td>
+                                <td>Cinemas</td>
+                            </tr>
+                            <tr>
+                                <td>Os Banshees de Inisherin</td>
+                                <td>Cinemas</td>
+                            </tr>
+                            <tr>
+                                <td>Os Fabelmans</td>
+                                <td>Cinemas</td>
+                            </tr>
+                            <tr>
+                                <td>Tár</td>
+                                <td>Cinemas</td>
+                            </tr>
+                            <tr>
+                                <td>Triângulo da Tristeza</td>
+                                <td>Cinemas e Amazon Prime</td>
+                            </tr>
+                            <tr>
+                                <td>Tudo em Todo o Lugar ao Mesmo Tempo</td>
+                                <td>Cinemas e Amazon Prime</td>
+                            </tr>
+                            <tr>
+                                <td>Elvis</td>
+                                <td>HBO Max</td>
+                            </tr>
+                            <tr>
+                                <td>Nada de Novo no Front</td>
+                                <td>NetFlix</td>
+                            </tr>
+                            <tr>
+                                <td>Top Gun: Maverick></td>
+                                <td>Paramount +</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
         <section  class="section-form" id="secao-form">
             <div class="background-form">
                 <div>
                     <div>
                         <p>Qual quer duvida use nossa caixa de dialago, sua opinião é de grande valor!!!</p>
                     </div>
-                    <form class="container-form">
+                    <form class="container-form" onsubmit="event.preventDefault(); postJSON(event);">
                             <h3>Deixe sua sugestão</h3>
                             <p class="container-input">
                                 <label for="nome">Nome:</label>
                                 <br>
-                                <input type="text" id="nome" name="nome">
+                                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
                             </p>
                             <p class="container-input">
                                 <label for="email">Email:</label>
                                 <br>
-                                <input type="text" id="email" name="email">
+                                <input type="text" id="email" name="email" placeholder="Digite seu email">
                             </p>
                             <p >
                                 <label for="opiniao">Caixa de mensagens:</label>
                                 <br>
-                                <textarea name="opiniao" id="opiniao"></textarea>
+                                <textarea name="opiniao" id="opiniao" placeholder="Digite sua mensagem"></textarea>
                             </p>
                             <button type="submit" id="form-btn">Enviar</button>
                     </form>

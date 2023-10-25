@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url("../imagens/fala-universidades-netflix-3-1.webp");
+    background-attachment: fixed;
+}
+#container-resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.913);
+}
+#container-resultado > div{
+    display: flex;
+    background-color: rgba(82, 76, 76, 0.311);
+    margin-bottom: 10px;
+    color: white;
+    width: 60%;
+}
+#container-resultado > div > div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+#container-resultado > div > div, h2 , p{
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+    color: gray;
+    font-size: 1.1em;
+}
+strong{
+    color: white;
+}
+h2{
+    color: white;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 1.5em;
+}
+
+
+@media (max-width:600px){
+    #container-resultado > div {
+        display: flex;
+        flex-direction: column;
+    }
+}

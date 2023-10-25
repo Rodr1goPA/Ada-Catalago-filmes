@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const movieDetailsContent = document.getElementById('movie-details-content');
             const containerCabecalho = document.querySelector('.container-cabecalho');
             const tvShowSection = document.getElementById('tv-shows-section');
+            const sectionOscar = document.querySelector('.container-oscar')
             const sectionForm = document.querySelector('.section-form');
             const footerSection = document.querySelector('.section-footer')
 
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             moviesSection.style.display = 'none';
             containerCabecalho.style.display = 'none';
             tvShowSection.style.display = 'none';
+            sectionOscar.style.display = 'none';
             sectionForm.style.display = 'none';
             footerSection.style.display = 'none';
 
@@ -77,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             moviesSection.style.display = 'block';
             containerCabecalho.style.display = 'block';
             tvShowSection.style.display = 'block';
+            sectionOscar.style.display = 'block';
             sectionForm.style.display = 'flex';
             footerSection.style.display = 'flex';
             window.scrollTo(0, scrollPosition);
@@ -122,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const tvShowDetailsContent = document.getElementById('tv-show-details-content')
             const containerCabecalho = document.querySelector('.container-cabecalho');
             const moviesSection = document.getElementById('movies-section');
+            const sectionOscar = document.querySelector('.container-oscar')
             const sectionForm = document.querySelector('.section-form');
             const footerSection = document.querySelector('.section-footer')
 
@@ -131,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             tvShowSection.style.display = 'none';
             containerCabecalho.style.display = 'none';
             moviesSection.style.display = 'none';
+            sectionOscar.style.display = 'none'
             sectionForm.style.display ='none';
             footerSection.style.display = 'none';
             
@@ -158,11 +163,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 moviesSection.style.display = 'block';
                 containerCabecalho.style.display = 'block';
                 tvShowSection.style.display = 'block';
+                sectionOscar.style.display = 'block'
                 sectionForm.style.display = 'flex';
                 footerSection.style.display = 'flex';
                 window.scrollTo(0, scrollPosition)
             })
         }
-
-        /*Efeito no menu*/
+        /*Form methodo POS usando API*/
+        async function postJSON(event) {
+            const formData = new FormData(document.querySelector('form'));
+            const nome = formData.get("nome");
+            const email = formData.get("email");
+            const mensagem = formData.get("opiniao");
+            try {
+                const response = await fetch("https://crudcrud.com/api/0c4e5df9455e425e971055613f9cc721/mensagem", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        nome: nome,
+                        email: email,
+                        opiniao: mensagem
+                    }),
+                });
+                const data = await response.json();
+                console.log('Success:', data);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+            const form = event.target;
+            form.reset();
+        }        
 });

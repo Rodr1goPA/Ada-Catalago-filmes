@@ -244,13 +244,48 @@
     font-size: 1.3em;
     padding: 10px;
 }
+/*Container Oscar*/
+.container-oscar{
+    background-image: url("../imagens/oscar-2023-onde-assistir_4520.jpeg");
+}
+.container-oscar > div{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border-top: 5px solid rgb(41, 38, 38);
+    background-color: rgba(37, 35, 35, 0.743);
+    color: white;
+}
+.container-oscar > div > h1{
+    font-size: 3.5em;
+}
+.container-oscar-tabela{
+    width: 70%;
+    height: 45vh;
+}
+table{
+    width: 100%;
+}
+thead{
+    background-color: rgb(184, 24, 24);
+    font-size: 2em;
+    font-weight: bold;
+}
+tbody{
+    background-color: rgb(56, 54, 54);
+    font-size: 1.5em;
+}
 /*Form*/
 .container-form{
     display: flex;
     flex-direction: column;
     width: 450px;
     height: 600px;
-    background-color: rgba(61, 57, 57, 0.754);
+    background-color: rgba(36, 34, 34, 0.721);
+    border-radius: 5px;
 }
 .container-form > h3{
     font-size: 2.5em;
@@ -274,9 +309,19 @@ label{
     color: white;
     font-size: 1.2em;
 }
+input{
+    outline: none;
+    font-size: 1.1em;
+    padding-left: 3px;
+    font-weight: bold;
+}
 textarea{
     width: 99%;
     height: 100px;
+    font-size: 1.1em;
+    padding-left: 3px;
+    font-weight: bold;
+    outline: none;
 }
 .section-form{
     display: flex;
@@ -293,7 +338,7 @@ textarea{
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-color: rgba(121, 113, 113, 0.674);
+    background-color: rgba(104, 101, 101, 0.648);
 }
 .background-form > div{
     display: flex;
@@ -349,7 +394,7 @@ img{
 
   
 
-  /*Midia query (Resposividade para Mobile)*/
+/*Midia query (Resposividade para Mobile)*/
 @media (max-width:600px){
     #menu-adaflix{
         display: none;
@@ -380,6 +425,13 @@ img{
     .background-form > div > div{
         display: none;
     }
+    .container-form{
+        height: 100vh;
+        width: 100%;
+    }
+    .container-form > h3{
+        font-size: 2em;
+    }
     #btn-voltar{
         left: 88%;
         bottom: 1vh;
@@ -389,6 +441,38 @@ img{
         display: none;
     }
 
+
+    .container-oscar > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100vh;
+        border-top: 5px solid rgb(41, 38, 38);
+        background-color: rgba(37, 35, 35, 0.743);
+        color: white;
+    }
+    .container-oscar > div > h1{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .container-oscar-tabela{
+        width: 70%;
+        height: 30vh;
+    }
+    table{
+        width: 100%;
+    }
+    thead{
+        background-color: rgb(184, 24, 24);
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    tbody{
+        background-color: rgb(56, 54, 54);
+        font-size: 1.1em;
+    }
+    
 }
 
 

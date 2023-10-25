@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function searchMovies(query) {
     const apiKey = 'b046cd3b7c462dff10c810f0a49e4168';
-    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
+    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=pt-BR`;
 
     fetch(apiUrl)
         .then((response) => response.json())
@@ -30,16 +30,24 @@ function searchMovies(query) {
 }
 
 function displayResults(results) {
-    const movieList = document.getElementById("movieList");
+    const movieList = document.getElementById("container-resultado");
     if (results.length === 0) {
         movieList.textContent = "Nenhum filme encontrado.";
     } else {
         results.forEach((movie) => {
-            const movieLink = document.createElement("a");
-            movieLink.href = `movie_details.html?id=${movie.id}`;
-            movieLink.textContent = movie.title;
-            movieLink.style.display = "block";
-            movieList.appendChild(movieLink);
+            const imageBaseUrl = 'https://image.tmdb.org/t/p/w200';
+            const imageSrc = `${imageBaseUrl}${movie.poster_path}`;
+            console.log(results)
+            const movieResults = document.createElement("div");
+            movieResults.innerHTML = `
+                                <img src="${imageSrc}" alt="${movie.title}"></img>
+                            <div>
+                                 <h2>${movie.title}</h2>
+                                 <p><strong>Sinopse:</strong> ${movie.overview}</p>
+                                 <p><strong>Data de lançamento:</strong> ${movie.release_date}</p>
+                            </div>
+            `      
+            movieList.appendChild(movieResults);
         });
     }
 }
