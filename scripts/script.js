@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData(document.querySelector('form'));
             const nome = formData.get("nome");
             const email = formData.get("email");
-            const mensagem = formData.get("opiniao");
+            const opiniao = formData.get("opiniao");
             try {
                 const response = await fetch("https://crudcrud.com/api/0c4e5df9455e425e971055613f9cc721/mensagem", {
                     method: "POST",
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: JSON.stringify({
                         nome: nome,
                         email: email,
-                        opiniao: mensagem
+                        opiniao: opiniao
                     }),
                 });
                 const data = await response.json();
