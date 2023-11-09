@@ -133,7 +133,7 @@
                     <div>
                         <p>Qual quer duvida use nossa caixa de dialago, sua opinião é de grande valor!!!</p>
                     </div>
-                    <form class="container-form" onsubmit="postJSON(event);">
+                    <form class="container-form" onsubmit="event.preventDefault(); postJSON(event);" method="post">
                             <h3>Deixe sua sugestão</h3>
                             <p class="container-input">
                                 <label for="nome">Nome:</label>

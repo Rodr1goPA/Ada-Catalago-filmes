@@ -168,31 +168,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 footerSection.style.display = 'flex';
                 window.scrollTo(0, scrollPosition)
             })
-        }
-        /*Form methodo POS usando API*/
-        async function postJSON(event) {
-            const formData = new FormData(document.querySelector('form'));
-            const nome = formData.get("nome");
-            const email = formData.get("email");
-            const opiniao = formData.get("opiniao");
-            try {
-                const response = await fetch("https://crudcrud.com/api/0c4e5df9455e425e971055613f9cc721/mensagem", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        nome: nome,
-                        email: email,
-                        opiniao: opiniao
-                    }),
-                });
-                const data = await response.json();
-                console.log('Success:', data);
-            } catch (error) {
-                console.error("Error:", error);
-            }
-            const form = event.target;
-            form.reset();
         }        
 });

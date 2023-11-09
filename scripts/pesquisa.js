@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Recupere o termo de pesquisa da URL
+    
     const params = new URLSearchParams(window.location.search);
     const searchTerm = params.get("query");
 
-    // Verifique se há um termo de pesquisa válido
+    
     if (searchTerm) {
-        // Chame a função para fazer a pesquisa usando o termo recuperado
+      
         searchMovies(searchTerm);
     } else {
-        // Caso contrário, exiba uma mensagem de erro ou redirecione para a página de pesquisa
-        // window.location.href = "search.html";  // Redireciona para a página de pesquisa, se necessário
+
         const movieList = document.getElementById("movieList");
         movieList.textContent = "Nenhum termo de pesquisa fornecido.";
     }
